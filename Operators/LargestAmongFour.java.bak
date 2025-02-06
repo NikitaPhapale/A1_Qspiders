@@ -1,0 +1,17 @@
+import java.util.Scanner;
+class LargestAmongFour 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter four values");
+		int a=sc.nextInt();
+		int b=sc.nextInt();
+		int c=sc.nextInt();
+		int d=sc.nextInt();
+
+		int ans=(a>b)?((a>c)?a:c):((b>c)?b:c);
+		int ams1=(ans>d)?ans:d;
+		System.out.println("larger number among four is:"+ans1);
+	}
+}

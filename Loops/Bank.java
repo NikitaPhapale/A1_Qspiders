@@ -1,0 +1,178 @@
+import java.util.Scanner;
+class Bank 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		String username1=null;
+		String password1=null;
+		String address=null;
+		double balance=0.0;
+		long contact=0;
+
+		for(;;)
+		{
+		System.out.println();
+		System.out.println();
+		System.out.println("********WELCOME*********");
+		System.out.println("   SATH BANDHAN BANK   ");
+		System.out.println();
+		System.out.println("1.EXISTING USER");
+		System.out.println("2.CREATE AN ACCOUNT");
+		System.out.println();
+		System.out.println("ENTER YOUR OPTION:");
+		int opt=sc.nextInt();
+		if(opt==1)
+			{
+				if(username1==null)
+				{
+					System.out.println("SORRY!! CREATE YOUR ACCOUNT FIRST");
+					continue;
+				}
+				System.out.println("LOGIN");
+				System.out.println();
+
+				for(int i=3;i>=1;i--)
+				{
+					System.out.println();
+					System.out.println("Username:");
+					String username=sc.next();
+					System.out.println("Password:");
+					String password=sc.next();
+					if(username.equals(username1) && password.equals(password1))
+					{
+						home:
+						for(;;)
+						{
+							System.out.println();
+							System.out.println("HOME PAGE");
+							System.out.println();
+							System.out.println("1.DEPOSIT");
+							System.out.println("2.WITHDRAW");
+							System.out.println("3.CHECK BALANCE");
+							System.out.println("4.MINI STATEMENT");
+							System.out.println("5.LOGOUT");
+							System.out.println();
+							System.out.println("Enter an option:");
+							int opt1=sc.nextInt();
+							System.out.println();
+							switch(opt1)
+							{
+								case 1:
+								{
+									System.out.println("DEPOSIT");
+									System.out.println();
+									System.out.println("Enter Amount :");
+									double depositAmt=sc.nextDouble();
+									balance+=depositAmt;
+									System.out.println("AMOUNT DEPOSITED SUCCESSFULLY");
+									System.out.println();
+									break;
+								}
+								case 2:
+								{
+									System.out.println("WITHDRAW");
+									System.out.println();
+									System.out.println("Enter Amount:");
+									double withdrawAmt=sc.nextDouble();
+									System.out.println("Enter the PIN:");
+									String password3=sc.next();
+									if(password3.equals(password1))
+									{
+									if(withdrawAmt<=balance)
+									{
+										balance-=withdrawAmt;
+										System.out.println("AMOUNT DEBITED SUCCESSFULLY");
+									}
+									else
+									{
+										System.out.println("INSUFFICIENT BALANCE");
+									}
+									}
+									else
+									{
+										System.out.println("WRONG PIN");
+									}
+									break;
+								}
+
+								case 3:
+								{
+									System.out.println("CHECK BALANCE");
+									System.out.println();
+									for(int j=3;j>=1;j--)
+									{
+										System.out.println();
+										System.out.println("Enter the PIN:");
+										String password2=sc.next();
+										if(password2.equals(password1))
+										{
+											System.out.println();
+											System.out.println("ACCOUNT BALANCE:"+balance+"rs");
+											continue home;
+										}
+										else
+										{
+											System.out.println("WRONG PIN");
+											System.out.println("Attempts Left:"+(j-1));
+										}
+									}
+									System.out.println("YOUR ACCOUNT HAS BEEN BLOCKED FOR 24 HOURS");
+									System.exit(0);//terminate the execution
+									break;
+
+								}
+								case 4:
+								{
+									System.out.println("MINI STATEMENT");
+									System.out.println();
+
+								}
+								case 5:
+								{
+									System.out.println("THANK YOU FOR VISITNG OUR APP! VISIT AGAIN");
+									System.exit(0);
+
+
+								}
+							}
+						}
+					}
+					else
+					{
+						System.out.println("INVALID CRED");
+						System.out.println("Attempts left:"+(i-1));
+					}
+				}
+				System.out.println("THANK YOU ! NEVER VISIT US");
+				System.exit(0);
+
+			}
+		else if(opt==2)
+			{
+			System.out.println("ACCOUNT CREATION");
+			System.out.println();
+			System.out.println("Username:");
+			username1=sc.next();
+			System.out.println("Password:");
+			password1=sc.next();
+			sc.nextLine();
+			System.out.println("Address:");
+			address=sc.nextLine();
+			System.out.println("Contact:");
+			contact=sc.nextLong();
+			System.out.println("Deposit Amount:");
+			balance=sc.nextDouble();
+			System.out.println();
+			System.out.println("ACCOUNT CREATED SUCCESSFULLY");
+			
+
+
+			}
+		else
+			{
+			System.out.println("INVALID OPTION");
+			}
+		}
+	}
+}
