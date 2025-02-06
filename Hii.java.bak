@@ -4,8 +4,7 @@ class Hii
 	{
 		for (; ; )
 		{
-				System.out.println("Hii there");
 		}
-	
+		System.out.println("Hii there");
 	}
 }
