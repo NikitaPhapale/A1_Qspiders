@@ -1,0 +1,45 @@
+import java.util.Scanner;
+class SumOfOddAndEvenDigitFactorial 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a  number:");
+		int num=sc.nextInt();
+		int tem=num;
+		int evenSum=0;
+		int oddSum=0;
+		
+		while(num>0)
+		{
+			int rem=num%10;
+
+			int fact=1;
+			if(rem%2!=0)
+			{
+				for(int i=rem;i>=1;i--)
+				{
+					fact*=i;
+				}
+				oddSum+=fact;
+				System.out.println("Odd digit:"+rem+"factorial is:"+fact);
+				
+			}
+			else
+			{
+				
+				for(int i=rem;i>=1;i--)
+				{
+					fact*=i;
+				}
+				evenSum+=fact;
+				System.out.println("Even digit:"+rem+"factorial is:"+fact);
+			}
+			
+			num/=10;
+		}
+		System.out.println("Number is:"+tem);
+		System.out.println("Odd digit factorial sum:"+ oddSum);
+		System.out.println("Even digit factorial sum:"+ evenSum);
+	}
+}

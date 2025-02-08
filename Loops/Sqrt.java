@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Sqrt 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a num:");
+		double num=sc.nextDouble();
+		double sqrt=1;
+	for(int i=1;i<=num;i++)
+		{
+		sqrt*=i;
+		}
+		double sq=num*num;
+		if(sqrt==sq)
+		{
+			System.out.println("whole squ");
+		}
+		//System.out.println(sqrt);
+	}
+}
