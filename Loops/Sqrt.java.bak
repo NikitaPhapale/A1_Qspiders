@@ -11,7 +11,7 @@ class Sqrt
 		{
 		sqrt*=i;
 		}
-		int sq=num*num;
+		double sq=num*num;
 		if(sqrt==sq)
 		{
 			System.out.println("whole squ");
