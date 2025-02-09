@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class NumToWord 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a num:");
+		int num=sc.nextInt();
+		String word="";
+		while(num>0)
+		{
+		int rev=num%10;
+		
+		String ans=rev==0?"Zero":rev==1?"One":rev==2?"Two":rev==3?"Three":rev==4?"Four":rev==5?"Five":rev==6?"Six":rev==7?"Seven":rev==8?"Eight":rev==9?"nine":"Invalid";
+		word+=ans;
+		num/=10;
+	
+		}
+		System.out.println(word);
+	}
+}
