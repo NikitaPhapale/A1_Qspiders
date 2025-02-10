@@ -13,7 +13,7 @@ class Sqrt
 		if(i*i==num)
 			{
 				flag=true;///means num has perfect sqrt
-				System.out.println(i+" is a a perfect sqrt for "+ num);
+				System.out.println(i+" is  a perfect sqrt for "+ num);
 			}
 			if(i*i>num)//means eg num=16 and i=5 so why we will check for 5*5=25 it is waste of memory so break loop
 				break;
