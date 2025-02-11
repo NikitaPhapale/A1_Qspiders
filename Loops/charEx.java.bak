@@ -5,8 +5,8 @@ class charEx
 	{
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter a char:");
-		char ch=sc.next().charAt(0);//Z
-		int ans=ch-'A'+1;//Z-A+1==90-65+1=26(Z)
+		char ch=sc.next().charAt(0);
+		int ans=ch-'A'+1;
 		System.out.println(ans);
 		
 	}
