@@ -1,0 +1,54 @@
+import java.util.Scanner;
+class Emirp 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a num:");
+		int num=sc.nextInt();
+		boolean flag=true;
+		for(int i=2;i<num;i++)
+		{
+			if(num%i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag && num!=1)
+		{
+			System.out.println(num+" is a prime");
+			int rev=0;
+			while(num>0)
+			{
+				int rem=num%10;
+				rev=rev*10+rem;
+				num/=10;
+			}
+			System.out.println("its reverse is "+rev);
+			boolean flag1=true;
+	    	for(int i=2;i<rev;i++)
+	    	{
+			   if(rev%i==0)
+			   {
+				flag1=false;
+				break;
+			    }
+		    }
+			if(flag1)
+			{
+				System.out.println(rev+" is a prime");
+				System.out.println(" so num is emirp");
+			}
+			else
+			{
+				System.out.println(rev+" is not a prime");
+				System.out.println(" so num is not emirp");
+			}
+		}
+		else
+		{
+			System.out.println("Num is not prime");
+		}
+	}
+}
