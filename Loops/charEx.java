@@ -4,10 +4,22 @@ class charEx
 	public static void main(String[] args) 
 	{
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter a char:");
-		char ch=sc.next().charAt(0);//Z
-		int ans=ch-'A'+1;//Z-A+1==90-65+1=26(Z)
-		System.out.println(ans);
+		System.out.println("Enter a characters:");
+		String str=sc.next().toUpperCase();
+		int op=0;
+		char ch=str.charAt(0);
+		if(str.length()>2)
+		{
+			System.out.println("INVALID STRING");
+			return ;
+		}
+		op=(ch-64);
+		if(str.length()==2)
+		{
+			char ch1=str.charAt(1);
+			op=(op*26)*(ch1-64);
+		}
+		System.out.println(str+" :"+op);
 		
 	}
 }
