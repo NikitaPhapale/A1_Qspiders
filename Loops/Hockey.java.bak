@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class Hockey 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner (System.in);
+		String str=sc.next();
+		int cnt=0;
+		int cnt1=0;
+		
+		for(int i=0;i<str.length()-1;i++)
+		{
+			
+			
+			if(str.charAt(i)=='1' )
+			{
+				cnt++;
+			}
+			else if(str.charAt(i)=='0')
+			{
+				cnt1++;
+			}
+			else
+			{
+				cnt=0;
+				cnt1=0;
+			}
+			if(cnt>=7 ||cnt1>=7)
+			{
+				
+				break ;
+			}
+			
+			
+		}
+
+		System.out.println(cnt>=7 ||cnt1>=7 ?"YES":"NO");
+		
+	}
+}
