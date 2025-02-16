@@ -10,6 +10,7 @@ class ISBNNumber
 			long rem=i%10;
 			sum+=(rem*j);
 		}
+		System.out.println(sum);
 		if(sum%11==0)
 		{
 			System.out.println(num+" is a valid ISBN number");

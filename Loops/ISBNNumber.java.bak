@@ -1,17 +1,17 @@
-import java.util.Scanner;
 class ISBNNumber 
 {
 	public static void main(String[] args) 
 	{
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter num:");
-		long num=sc.nextLong();
+		
+		long num=1259060977l;
 		int sum=0;
 		for(long i=num,j=1;i>0;i/=10,j++)
 		{
 			long rem=i%10;
-			sum+=(rem*j);
+			rem*=j;
+			sum+=(rem);
 		}
+		System.out.println(sum);
 		if(sum%11==0)
 		{
 			System.out.println(num+" is a valid ISBN number");
