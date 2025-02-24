@@ -6,6 +6,7 @@ class SunnyNumber
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter num:");
 		int num=sc.nextInt();
+		int temp=num;
 		 num+=1;
 		int sqr=1;
 		boolean flag=false;
@@ -15,7 +16,7 @@ class SunnyNumber
 			if(i*i==num)
 			{
 				flag=true;
-				System.out.println(num+" has perfect square ...so  "+num+" is Sunny number");
+				System.out.println(num+" has perfect square ...so  "+temp+" is Sunny number");
 			}
 			if(i*i>num)
 				break;
@@ -23,7 +24,7 @@ class SunnyNumber
 		}
 		if(!flag)
 		{
-			System.out.println(num+" is not Sunny number");
+			System.out.println(temp+" is not Sunny number");
 		}
 
 	}
