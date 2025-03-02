@@ -134,38 +134,137 @@ class Restaurant
 			switch(id)
 			{
 				case 101:
+				{
 					basket.add("101 : BUTTER_CHICKEN = 450");
 					System.out.println("Butter Chicken added to backet");
 					break;
+				}
 				case 102:
+				{
 					basket.add("102 : CHICKEN_BIRYANI = 350");
 					System.out.println("Chicken Biryani added to backet");
 					break;
+				}
 				case 103:
+				{
 					basket.add("103 : SHAHI PANEER = 330");
 					System.out.println("Shahi Paneer added to backet");
 					break;
+				}
 				case 104:
+				{
 					basket.add("104 : MIX_VEG = 280");
 					System.out.println("Mix Veg added to backet");
 					break;
+				}
 				case 105:
+				{
 					basket.add("105 : PARATHE = 200");
 					System.out.println("Paratha added to backet");
 					break;
+				}
 				case 106:
-					basket.add("106 : ROTI/NAAN = 50");
+				{
+					basket.add("106 : ROTI_NAAN = 50");
 					System.out.println("Roti/Naan added to backet");
 					break;
+				}
 				case 107:
+				{
 					return;
+				}
 				default:
+				{
 					System.out.println("INVALID INPUT");
 					break;
+				}
 			}
 
 
 		}
 	}
+	public static void order(Scanner sc)
+	{
+		System.out.println();
+		System.out.println("        ORDERS");  
+		System.out.println();
+		if(basket.size()==0)
+		{
+			System.out.println("BASKET IS EMPTY ADD FOOD ITEMS");
+
+		}
+		for(String foodItem:basket)
+		{
+			System.out.println(foodItem);
+		}
+		System.out.println();
+		System.out.println("1.CANCEL ORDER");
+		System.out.println("2.REMOVE FOOD ITEM");
+		System.out.println("3.PROCEED TO PAYMENT");
+		System.out.println();
+		System.out.println("ENTER THE OPTION");
+		int opt=sc.nextInt();
+		System.out.println();
+		switch(opt)
+		{
+			case 1:
+				System.out.println("ORDER CANCELLED");
+				basket.clear();
+				break;
+			
+			case 2:
+				System.out.println("ENTER FOOD ID:");
+				int foodId=sc.nextInt();
+				removeFoodId(foodId);
+				break;
+			case 3:
+				billGenerate();
+				break;
+
+
+				
+		}
+	}
+	public static void removeFoodId(int foodId)
+	{
+		ArrayList<String>dupBasket=new ArrayList<>(basket);
+		int indx=0;
+		boolean flag=false;
+		for(String foodItem:dupBasket)
+		{
+			String [] arr=foodItem.split(" ");
+			if(arr[0].equals(foodId+""))
+			{
+				dupBasket.remove(indx);
+				flag=true;
+				System.out.println("FOOD ITEM REMOVED");
+			}
+
+			indx++;
+		}
+		if(!flag)
+			System.out.println("FOOD ITEM DOESN'T EXIST IN BASKET");
+		
+		basket=dupBasket;
+	}
+
+	public static void tableBooking()
+	{
+		System.out.println();
+		System.out.println("         TABLE BOOKING");
+		System.out.println();
+	}
+
+	public static void billGenerate()
+	{
+		double totalBill=0;
+		for(String foodItem:basket)
+		{
+			String [] arr=foodItem.split(" ");
+			totalBill=Double.parseDouble(arr[4]);
+		}
+		System.out.println("TOTAL BILL : "+totalBill+"rs."); 
+	}
+
 
 }

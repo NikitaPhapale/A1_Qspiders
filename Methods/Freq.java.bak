@@ -1,0 +1,20 @@
+import java.util.Scanner;
+class Freq 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter num:");
+		int num=sc.nextInt();
+		System.out.println(freq(num));
+	}
+	public static int freq(int num)
+	{
+		int cnt=0;
+		for(int i=num;i>0;i/=10)
+		{
+			cnt++;
+		}
+		return cnt;
+	}
+}

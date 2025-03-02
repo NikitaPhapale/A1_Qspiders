@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class ArmstrongNum 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter num:");
+		int num=sc.nextInt();
+		if(num==power(num,count(num)))
+			System.out.println(num+" is Armstrong");
+		else
+			System.out.println(num+" is not Armstrong");
+
+	}
+	public static int count(int num)
+	{
+		int cnt=0;
+		while(num>0)
+		{
+			cnt++;
+			num/=10;
+		}
+		return cnt;
+	}
+	public static int power(int num ,int len)
+	{
+		
+		int sum=0;
+		for(int i=num;i>0;i/=10)
+		{
+			int pow=1;
+			int rem=i%10;
+			for(int j=1;j<=len;j++)
+			{
+				pow*=rem;
+			}
+			sum+=pow;
+		}
+		return sum;
+	}
+}
