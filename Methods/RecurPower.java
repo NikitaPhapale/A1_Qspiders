@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class RecurPower 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter base:");
+		int base=sc.nextInt();
+		System.out.println("Enter raise:");
+		int raise=sc.nextInt();
+		System.out.println(power(base,raise));
+	}
+		public static int power(int base,int raise)
+	{
+			if(raise==0)
+				return 1;
+			return base*power(base,raise-1);
+	}
+}

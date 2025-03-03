@@ -6,24 +6,26 @@ class PrimeRotateNum
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter num:");
 		int num=sc.nextInt();
-		if(isPrime(num))
-			System.out.println(num+" is prime ");
-		else
-			System.out.println(num+" is not prime");
-		int rot=rotate(num);
-		
-		while(rot!=num)
+		for(int i=1;i<num;i++)
 		{
-			
-			if(isPrime(rot))
-				System.out.println(rot+" is a prime ");
-			else
-				System.out.println(rot+" is not prime");
-			rot=rotate(rot);
-
+			if(isRotatingPrime(i))
+				System.out.println(i);
 		}
-		//System.out.println(rot);
+		
+	}
+	public static boolean isRotatingPrime(int num)
+	{
+		if(isPrime(num))
+		{
+			int rot=rotate(num);
+			while(rot!=num && isPrime(rot))
+			{
 
+				rot=rotate(rot);
+			}
+			return num==rot;
+		}
+		return false;
 	}
 	public static int rotate(int num)
 	{
