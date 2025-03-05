@@ -1,0 +1,39 @@
+import java.util.Scanner;
+class DisariumNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter num:");
+		int num=sc.nextInt();
+		System.out.println(isDisarium(num));
+	}
+	public static boolean isDisarium(int num)
+	{
+		int temp=num;
+	int sum=0;
+		
+		while(num>0)
+		{
+			
+			sum+=power(num%10,count(num));
+			num/=10;
+			
+		}
+		return temp==sum;
+	}
+	public static int power(int base,int raise)
+	{
+		int pow=1;
+		for(int i=1;i<=raise;i++)
+			pow*=base;
+		return pow;
+	}
+	public static int count(int num)
+	{
+		int ct=0;
+		for(int i=num;i>0;i/=10)
+			ct++;
+		return ct;
+	}
+}
