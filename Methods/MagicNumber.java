@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class MagicNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter num:");
+		int num=sc.nextInt();
+		System.out.println(isMagic(num));
+	}
+	public static boolean isMagic(int num)
+	{
+		int sum=sumOfDigit(num);
+		while(sum!=1 && sum>=10)
+		{
+			sum=sumOfDigit(sum);
+			
+		}
+		return sum==1?true:false;
+
+	}
+	public static int sumOfDigit(int num)
+	{
+		int sum=0;
+		while(num>0)
+		{
+			sum+=(num%10);
+			num/=10;
+		}
+		return sum;
+	}
+}

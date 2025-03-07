@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class LazyNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println(pieces(4));
+	}
+	public static int pieces(int n)
+	{
+		int piece=1;
+		
+		
+		for(int cut=1;cut<=n;cut++)
+		{
+			piece+=cut;
+			
+		}
+		return piece;
+	}
+
+}
