@@ -6,6 +6,5 @@ class ServerDBDriver
 		s1.serverDetails();
 		s1.serverDetails().getDBData("MYSQL","root","root");
 
-
 	}
 }
