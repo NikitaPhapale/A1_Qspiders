@@ -1,0 +1,22 @@
+class Server 
+{
+	String name;
+	String ip;
+	int port;
+
+	public Server severDetails()
+	{
+		System.out.println(name);
+		System.out.println(ip);
+		System.out.println(port);
+		return this;
+
+	}
+	public DB getDBData(String name,String user,String pass)
+	{
+		String name=this.name;
+		String user=this.user;
+		String pass=this.pass;
+		return this;
+	}
+}

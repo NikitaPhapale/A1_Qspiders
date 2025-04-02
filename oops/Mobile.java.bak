@@ -1,0 +1,9 @@
+class Mobile 
+{
+	String brand;
+	String model;
+	double price;
+	int ram;
+	int rom;
+	int camera;
+}
