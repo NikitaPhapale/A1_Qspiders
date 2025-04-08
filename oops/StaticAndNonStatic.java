@@ -1,0 +1,38 @@
+class StaticAndNonStatic 
+{
+	static String name="NIkita";
+	int age=20;
+	static String email;
+	long contact;
+	{
+		System.out.println("NOn static block");
+		  a();
+
+		System.out.println(name);
+		System.out.println(age);
+			email="233423";
+		contact=1233;
+		
+
+		
+	}
+	static
+	{
+		System.out.println("Static block");
+		//b(); you cant call non static method in static block
+		email="298e";
+		//contact=1233; non static variable cannot intialize in static block
+		System.out.println(email);
+		//System.out.println(contact); non sttaic in static
+	}
+	public static void a()
+	{
+		System.out.println("Static method");
+	}
+	public void b()
+	{
+		System.out.println("Non static method");
+	}
+
+
+}

@@ -1,0 +1,57 @@
+class FormChaining 
+{
+	String name;
+	long phno;
+	long tel;
+	char gender;
+	String blood;
+	String email;
+	String dob;
+
+	FormChaining()
+	{
+		System.out.println("From constructor 1");
+	}
+
+	FormChaining(String name,long phno,char gender,String dob)
+	{
+		System.out.println("From constructor 2");
+		this.name=name;
+		this.phno=phno;
+		this.gender=gender;
+		this.dob=dob;
+	}
+	FormChaining(String name,long phno,char gender,String dob,long tel)
+	{
+		System.out.println("From constructor 3");
+		this(name,phno,gender,dob);
+
+		this.tel=tel;
+	}
+	FormChaining(String name,long phno,char gender,String dob,long tel,String blood)
+	{
+		System.out.println("From constructor 4");
+		this(name,phno,gender,dob,tel);
+
+		this.blood=blood;
+	}
+	FormChaining (String name,long phno,char gender,String dob,long tel,String blood,String email)
+	{
+		System.out.println("From constructor 5");
+		this(name,phno,gender,dob,tel,blood);
+		
+		this.email=email;
+	}
+	public void displayFormChaining()
+	{
+		System.out.println(name);
+		System.out.println(phno);
+		System.out.println(gender);
+		System.out.println(dob);
+
+		System.out.println(tel);
+		System.out.println(blood);
+		System.out.println(email);
+		System.out.println("---------------------------");
+	}
+}

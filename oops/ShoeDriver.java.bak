@@ -6,7 +6,7 @@ class ShoeDriver
 		s1.displayDetails();
 		System.out.println("******************");
 		
-		Shoe s2=new Shoe(3000.32,9,"black","Sports");
+		Shoe s2=new Shoe();
 		s2.displayDetails();
 
 	}

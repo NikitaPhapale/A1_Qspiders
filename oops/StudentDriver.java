@@ -2,12 +2,14 @@ class StudentDriver
 {
 	public static void main(String[] args) 
 	{
-	Student s1=new Student();
-	s1.name="Raju";
-	s1.roll=123;
-	s1.coll="Sandip Foundation";
-	s1.age=20;
-	s1.degree="BE";
+	Student s1=new Student("Raju",20,"SP","BE",1234);
 	s1.displayStudent();
+
+	Student s2=new Student();
+
+	Student s3=new Student("Nikita",20,"Sandip","BE",195);
+	s2.displayStudent();
+	s3.displayStudent();
+	
 	}
 }
